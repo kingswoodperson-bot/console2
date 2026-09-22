@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.screen {
+  display: none;
+  min-height: 100vh;
+}
+
+.screen.active {
+  display: block;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 20px 0 30px;
+}
+
+h2 {
+  font-size: 30px;
+  margin: 20px 0;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.menu-grid button,
+.back-button,
+.deal-button {
+  border: 0;
+  border-radius: 16px;
+  padding: 20px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.menu-grid button {
+  min-height: 110px;
+  text-align: left;
+}
+
+.back-button {
+  margin-bottom: 10px;
+}
+
+.deal {
+  background: #1d1d1d;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.deal h3 {
+  margin-top: 0;
+}
+
+.deal p {
+  line-height: 1.5;
+}
+
+.deal-button {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+#foodLastUpdated {
+  opacity: 0.7;
+}
