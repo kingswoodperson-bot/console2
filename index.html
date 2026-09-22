@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Console — personal life panel">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Console</title>
+</head>
+<body>
+  <main id="app">
+    <section id="home" class="screen active">
+      <header class="home-header">
+        <div class="eyebrow">PERSONAL CONSOLE</div>
+        <h1>Console</h1>
+        <p>Everything in one place.</p>
+      </header>
+
+      <div class="menu-grid">
+        <button class="menu-card" data-screen="rota"><span>📅</span><strong>Rota</strong><small>Work & shifts</small></button>
+        <button class="menu-card" data-screen="money"><span>💷</span><strong>Money</strong><small>Spending & bills</small></button>
+        <button class="menu-card" data-screen="fuel"><span>⛽</span><strong>Fuel</strong><small>Car & fuel</small></button>
+        <button class="menu-card" data-screen="hullfc"><span>⚫</span><strong>Hull FC</strong><small>Black & Whites</small></button>
+        <button class="menu-card" data-screen="food"><span>🍔</span><strong>Food Deals</strong><small>Today's offers</small></button>
+        <button class="menu-card" data-screen="ai"><span>🤖</span><strong>AI</strong><small>Coming later</small></button>
+      </div>
+    </section>
+
+    <section id="rota" class="screen">
+      <button class="back-button" data-screen="home">← Home</button>
+      <h2>Rota</h2>
+      <div class="card"><p>Your rota section is ready for your shift data.</p></div>
+    </section>
+
+    <section id="money" class="screen">
+      <button class="back-button" data-screen="home">← Home</button>
+      <h2>Money</h2>
+      <div class="card"><p>Your money section is ready for spending, income and bills.</p></div>
+    </section>
+
+    <section id="fuel" class="screen">
+      <button class="back-button" data-screen="home">← Home</button>
+      <h2>Fuel</h2>
+      <div class="card"><p>Your fuel section is ready for car and fuel tracking.</p></div>
+    </section>
+
+    <section id="hullfc" class="screen">
+      <button class="back-button" data-screen="home">← Home</button>
+      <div class="fc-hero">
+        <div class="eyebrow">THE BLACK & WHITES</div>
+        <h2>Hull FC</h2>
+        <p>Hull FC information can be added here next.</p>
+      </div>
+    </section>
+
+    <section id="food" class="screen">
+      <button class="back-button" data-screen="home">← Home</button>
+      <div class="food-header">
+        <div>
+          <div class="eyebrow">HULL / FOOD</div>
+          <h2>Food Deals</h2>
+          <p id="foodLastUpdated">Checking today's deals...</p>
+        </div>
+        <button id="foodRefresh" class="small-button">Refresh</button>
+      </div>
+
+      <div class="card food-note">
+        <strong>Daily board</strong>
+        <p>Voucher deals include a button to claim or buy the voucher. Online offers open their offer page.</p>
+      </div>
+
+      <div id="foodDeals"></div>
+    </section>
+
+    <section id="ai" class="screen">
+      <button class="back-button" data-screen="home">← Home</button>
+      <h2>AI</h2>
+      <div class="card"><p>The real AI assistant can be added later without changing the rest of the app.</p></div>
+    </section>
+  </main>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/food.js"></script>
+  <script src="./js/app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js").catch(console.error);
+      });
+    }
+  </script>
+</body>
+</html>
